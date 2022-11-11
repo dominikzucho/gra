@@ -1,0 +1,29 @@
+.hidden{
+    position:fixed;
+    left: 5000px;
+}
+body{
+    background-color: darkslategrey;
+}
+.error{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+.drewnoo
+{
+    background-color: rgb(127, 42, 2); width: 100px; height: 100px;
+    background-image: url(../img/Kora_dębu.png);
+    background-size: 100px;
+}
+.zelazoo
+{
+    background-color: rgb(178, 178, 178); width: 100px; height: 100px;
+    background-image: url(../img/Złoże_żelaza.png);
+    background-size: 100px;
+}
+.kamienn
+{
+    background-color: rgb(57, 57, 57); width: 100px; height: 100px;
+    background-image: url(../img/Stone.png);
+    background-size: 100px;
+}
