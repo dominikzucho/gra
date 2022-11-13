@@ -1,5 +1,3 @@
-
-
 async function oferty(){
     const div = document.querySelector(".oferty")
     const response = await fetch("./skrypty/oferty.php", {
@@ -29,23 +27,19 @@ async function oferty(){
         const info2 = document.createElement('p'); 
         info2.innerHTML = "towar: ";
         const towar = document.createElement('div');
-        towar.innerHTML = oferty.oferty[i][1];
+        towar.innerHTML = oferty.oferty[i][2];
 
         const info3 = document.createElement('p'); 
         info3.innerHTML = "ilość: ";
         const ilosc = document.createElement('div');
-        ilosc.innerHTML = oferty.oferty[i][1];
+        ilosc.innerHTML = oferty.oferty[i][3];
 
         const info4 = document.createElement('p'); 
         info4.innerHTML = "cena: ";
         const cena = document.createElement('div');
-        cena.innerHTML = oferty.oferty[i][1];
+        cena.innerHTML = oferty.oferty[i][4];
 
-        // const info = document.createElement('p');
-        // info.innerHTML = "  
-        // " cena: " + oferty.oferty[i][4];
-
-        //przycisk
+        //zakup
         var hidden = document.createElement("input");
         hidden.value = oferty.oferty[i];
         hidden.name = "oferta"
@@ -73,16 +67,17 @@ async function oferty(){
       }
     }
   }
-
   oferty();
-
-  async function czyszczenieOfert(){
+async function czyszczenieOfert(){
     //dokonczyc
       var oferty = document.querySelectorAll(".oferty .oferta");
       oferty.forEach(oferta => {
         oferta.remove();
       });
   }
+
+
+
   window.setInterval('refresh()', 1000); 	
     function refresh() {
       oferty();

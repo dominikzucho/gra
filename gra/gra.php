@@ -4,7 +4,7 @@
     require_once "polaczenie.php";
     $polaczenie = @new mysqli($host, $user, $password, $name);
     $log = $_SESSION['login'];
-    $rezultat = @$polaczenie->query("SELECT id FROM `login` WHERE login = '$log'");
+    $rezultat = @$polaczenie->query("SELECT * FROM `login` WHERE login = '$log'");
     $_SESSION['id'] = $rezultat->fetch_row()[0];
     $rezultat->free_result();
     $polaczenie->close();
