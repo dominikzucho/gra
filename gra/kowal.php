@@ -18,7 +18,7 @@
     <title>Gra</title>
     <link rel="stylesheet" href="./skrypty/style.css">
 </head>
-<body class="glowne_body">
+<body class="kowal_body">
 <div class="wszystko">
 <div class="SetNick hidden">
     <form action="./skrypty/setnick.php" method="post">
@@ -39,28 +39,12 @@
     <div class="staty"><h4 class="zelazo"></h4></div>
     <div class="staty"><h4 class="kamien"></h4></div>
 </div>
-
-
-
-<div class="przejscia">
-<div class="las">
-    <a href="las.php">IDŹ DO LASU</a>
+<div class="ikona_zelazo">
+<div class="zelazoo" onclick="clickIron()"></div>
 </div>
 
-<div class="kopalnia">
-    <a href="kopalnia.php">IDŹ DO KOPALNI</a>
-</div>
-
-<div class="kopalnia">
-    <a href="kowal.php">IDŹ DO KOWALA</a>
-</div>
-</div>
-
-<div class="przejscia2">
-
-<div class="handel"><a href="handel.php">Handluj</a></div>
-
-<a href="logout.php" class="wyloguj">wyloguj</a>
+<div class="wioska">
+    <a href="gra.php">WRÓĆ DO WIOSKI</a>
 </div>
 </div>
 

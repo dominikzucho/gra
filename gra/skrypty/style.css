@@ -2,28 +2,86 @@
     position:fixed;
     left: 5000px;
 }
-body{
-    background-color: darkslategrey;
+.glowne_body{
+    background-color:green; 
+    background-image: url(../img/tło_główne.png);
 }
+
+.las_body{
+    background-image: url(../img/Las_tło.jpg);
+}
+
+.kopalnia_body{
+    background-image: url(../img/kopalnia_tło.jpg);
+}
+
+.kowal_body{
+    background-image: url(../img/kowal_tło.jpg);
+}
+
 .error{
     color: rgb(255, 0, 0);
     font-weight: bold;
 }
+
+.przejscia{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 25% 30% 0 30%;
+}
+
+.przejscia2{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 5% 30% 0 30%;
+}
+
+.ikona_dreno{
+display: flex;
+justify-content: center;
+margin-top: 10%;
+}
 .drewnoo
 {
-    background-color: rgb(127, 42, 2); width: 100px; height: 100px;
-    background-image: url(../img/Kora_dębu.png);
-    background-size: 100px;
+    background-image: url(../img/Drzewo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50vw; height: 50vh;
 }
+
+.ikona_zelazo{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    }
+
 .zelazoo
 {
-    background-color: rgb(178, 178, 178); width: 100px; height: 100px;
-    background-image: url(../img/Złoże_żelaza.png);
-    background-size: 100px;
+    background-image: url(../img/kowadło.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50vw; height: 50vh;
 }
+
+.ikona_kamien{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    }
+
 .kamienn
 {
-    background-color: rgb(57, 57, 57); width: 100px; height: 100px;
-    background-image: url(../img/Stone.png);
-    background-size: 100px;
+    background-image: url(../img/kamień.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50vw; height: 50vh;
+}
+
+.stats{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5% 15% 0 15%;
 }
