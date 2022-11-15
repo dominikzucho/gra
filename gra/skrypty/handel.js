@@ -1,4 +1,4 @@
-console.log("siema");
+
 async function oferty(){
     const div = document.querySelector(".oferty")
     const response = await fetch("./skrypty/oferty.php", {
@@ -53,14 +53,19 @@ async function oferty(){
           form.action = "./skrypty/kup.php"
           form.appendChild(hidden);
           form.appendChild(button);
-          //usuwanie oferty
+        //usuwanie oferty
+          var anulowanieForm = document.createElement("form")
+          anulowanieForm.method = "POST";
+          anulowanieForm.action = "./skrypty/anulowanie.php"
           var anulowanie = document.createElement("button")
-          anulowanie.onclick="anulowanie()";
-          if(oferty.oferty[i][1]== oferty.nick){
-            console.log("XD")
-          }
-          console.log(oferty.nick);
-          console.log("siema");
+          anulowanie.textContent = "usuń";
+          anulowanieForm.appendChild(anulowanie);
+          var hidden2 = document.createElement("input");
+          hidden2.type = "hidden";
+          hidden2.name = "hidden";
+          hidden2.value = oferty.oferty[i][0];
+          
+          
         
         ///ustawiamy elementy
         oferta.appendChild(info1)
@@ -71,12 +76,19 @@ async function oferty(){
         oferta.appendChild(ilosc)
         oferta.appendChild(info4)
         oferta.appendChild(cena)
-        oferta.appendChild(form);
+        if(oferty.oferty[i][1] != oferty.nick){
+          oferta.appendChild(form);
+        }
+        if(oferty.oferty[i][1] == oferty.nick){
+          oferta.appendChild(anulowanieForm);
+        }
         ///
       }
     }
   }
+
   oferty();
+
 async function czyszczenieOfert(){
     //dokonczyc
       var oferty = document.querySelectorAll(".oferty .oferta");
@@ -91,10 +103,3 @@ async function czyszczenieOfert(){
     function refresh() {
       oferty();
     }
-
-
-
-
-  
-    
-  

@@ -65,6 +65,8 @@ require_once "polaczenie.php";
     </div>
     
     <a href="../gra/gra.php">gra</a>
+
+    
     <script src="./skrypty/script.js"></script>
     <script src="./skrypty/handel.js"></script>
 </body>
