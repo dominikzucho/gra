@@ -5,18 +5,23 @@
 .glowne_body{
     background-color:green; 
     background-image: url(../img/tło_główne.png);
+    background-size: 100%;
+
 }
 
 .las_body{
     background-image: url(../img/Las_tło.jpg);
+    background-size: 100%;
 }
 
 .kopalnia_body{
     background-image: url(../img/kopalnia_tło.jpg);
+    background-size: 100%;
 }
 
 .kowal_body{
     background-image: url(../img/kowal_tło.jpg);
+    background-size: 100%;
 }
 
 .error{

@@ -1,43 +1,77 @@
 <?php
-    session_start();
+session_start();
 ?>
+
 <?php
-require_once "polaczenie.php";
-
-$polaczenie = @new mysqli($host, $user, $password, $name);
-if($polaczenie->connect_errno!=0)
+// weryfikacja pól logowania
+if(isset($_POST['login']))
 {
-    echo "Error: ",$polaczenie->connect_errno;
+    if(empty($_POST['login']) || empty($_POST['haslo']))
+    {
+        $_SESSION['blad'] = 'Wpisz login i hasło';
+        header('location: index.php');
+        exit();
+    }
 }
-else
+?>
+
+<?php
+$login = $_POST['login'];
+$haslo = $_POST['haslo'];
+
+// proces łączenia z bazą danych i obsługa logowania
+require_once('polaczenie.php');
+
+mysqli_report(MYSQLI_REPORT_STRICT);
+try{
+    $poloczenie = new mysqli($host, $user, $password, $name); 
+}catch(mysqli_sql_exception $e)
 {
-    $login = $_POST['login'];
-    $haslo = $_POST['haslo'];
+$_SESSION['blond'] = $e;
+header('Location: index.php');
+exit();
+}
+
+// udało sie połączyć z bazą danych
+
+// zabezpieczenie
+$login = htmlentities($login);
+$haslo = htmlentities($haslo);
+$login = $poloczenie->real_escape_string($login);
+$haslo = $poloczenie->real_escape_string($haslo);
+
+// weryfikacja loginu
+$zapytanie = "SELECT login FROM login WHERE login='$login'";
+$wynik = $poloczenie->query($zapytanie);
+
+// sprawdzamy czy baza zwróci dokładnie 1 rekord 
+
+if($wynik->num_rows == 1)
+{
+    //weryfikacja hasla
+    $zapytanie = "SELECT haslo FROM login WHERE login='$login'";
+    $wynik = $poloczenie->query($zapytanie);
+    $rekord = $wynik->fetch_assoc();
+
+    if($rekord['haslo'] == $haslo)
+    {
+        $_SESSION['login'] = $login;
+    header('Location: gra.php');
+    }
+    else{
+        $_SESSION['blad'] = 'Nieprawidłowe hasło!';
+        header('location: index.php');
+        exit();
+    }
+
     $_SESSION['login'] = $login;
-
-    if($rezultat = @$polaczenie->query(
-        "SELECT * FROM `login` WHERE login='$login' AND haslo='$haslo'"))
-        {
-            $ile_userow = $rezultat->num_rows;
-            if($ile_userow>0)
-            {
-                unset($_SESSION['blad']);
-                $rezultat->free_result();
-                header('Location: gra.php');
-            }
-            else
-            {
-                $_SESSION['blad'] = '<br><br><span style="color:red">Nieprawidlowe haslo lub login</span>';
-                header('Location: index.php');
-                echo "a";
-            }
-
-        }else{
-            
-            $_SESSION['blad'] = '<br><br><span style="color:red">Nieprawidlowe haslo lub login</span>';
-            echo "b";
-            // header('Location: index.php');
-        }
-
+    header('Location: gra.php');
 }
+else 
+{
+    $_SESSION['blad'] = 'Błędny login';
+    header('Location: index.php');
+    exit();
+}
+
 ?>

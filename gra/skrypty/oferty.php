@@ -2,6 +2,7 @@
 session_start();
 require_once "../polaczenie.php";
 $id = $_SESSION['id'];
+$nick = $_SESSION['nick'];
 $input = file_get_contents("php://input"); 
 $input = json_decode($input);
 
@@ -10,6 +11,6 @@ if($polaczenie->connect_errno!=0){}else{
    $zapytanie = "SELECT * FROM `oferty`;";
    $wynik = $polaczenie->query($zapytanie);
    $wynik = $wynik->fetch_all(); 
-   echo json_encode(["Status"=> "OK", "oferty" => $wynik]);
+   echo json_encode(["nick"=> "$nick", "oferty" => $wynik]);
 }
 ?>

@@ -30,8 +30,9 @@ $polaczenie = @new mysqli($host, $user, $password, $name);
         }
         else
         {
-            ///za malo zlota
+            //za mało pieniazkow
         }
+     
         }
         else{
             //oferta wykupiona

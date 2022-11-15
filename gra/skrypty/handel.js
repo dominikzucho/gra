@@ -1,3 +1,4 @@
+console.log("siema");
 async function oferty(){
     const div = document.querySelector(".oferty")
     const response = await fetch("./skrypty/oferty.php", {
@@ -52,6 +53,14 @@ async function oferty(){
           form.action = "./skrypty/kup.php"
           form.appendChild(hidden);
           form.appendChild(button);
+          //usuwanie oferty
+          var anulowanie = document.createElement("button")
+          anulowanie.onclick="anulowanie()";
+          if(oferty.oferty[i][1]== oferty.nick){
+            console.log("XD")
+          }
+          console.log(oferty.nick);
+          console.log("siema");
         
         ///ustawiamy elementy
         oferta.appendChild(info1)
@@ -82,5 +91,10 @@ async function czyszczenieOfert(){
     function refresh() {
       oferty();
     }
+
+
+
+
+  
     
   

@@ -69,6 +69,7 @@ async function clickIron(){
     method: "POST",
     body: JSON.stringify({wood: "Iron!"})
   })  
+  console.log("ZXDSAFS");
 }
 //liczenie ile kamienia zebralismy
 async function clickStone(){

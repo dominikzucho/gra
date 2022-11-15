@@ -6,9 +6,15 @@
     $log = $_SESSION['login'];
     $rezultat = @$polaczenie->query("SELECT * FROM `login` WHERE login = '$log'");
     $_SESSION['id'] = $rezultat->fetch_row()[0];
+    $id = $_SESSION['id'];
+    $rezultat->free_result();
+    $rezultat = @$polaczenie->query("SELECT * FROM `gracz` WHERE ID = '$id'");
+    $_SESSION['nick'] = $rezultat->fetch_row()[1];
     $rezultat->free_result();
     $polaczenie->close();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
