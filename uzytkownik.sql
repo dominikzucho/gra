@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 11 Lis 2022, 16:34
+-- Czas generowania: 15 Lis 2022, 13:43
 -- Wersja serwera: 10.4.25-MariaDB
 -- Wersja PHP: 8.1.10
 
@@ -45,16 +45,6 @@ CREATE TABLE `gracz` (
   `mur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
---
--- Zrzut danych tabeli `gracz`
---
-
-INSERT INTO `gracz` (`ID`, `nick`, `lvl`, `exp`, `zloto`, `dni_vip`, `drewno`, `drewnoPlus`, `zelazo`, `zelazoPlus`, `kamien`, `kamienPlus`, `wojownicy`, `obroncy`, `mur`) VALUES
-(0, 'admin', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(12, 'bidi', 1, 0, 100, 0, 223, 2, 0, 1, 0, 1, 0, 0, 0),
-(13, 'stygus', 1, 0, 100, 0, 190, 1, 110, 1, 95, 1, 0, 0, 0),
-(14, 'gremlinowski', 1, 0, 100, 0, 20, 1, 20, 1, 20, 1, 0, 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -67,17 +57,6 @@ CREATE TABLE `login` (
   `haslo` varchar(20) COLLATE utf8mb4_polish_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
-
---
--- Zrzut danych tabeli `login`
---
-
-INSERT INTO `login` (`ID`, `login`, `haslo`, `email`) VALUES
-(1, 'admin', 'admin', ''),
-(12, 'buldog', 'kwakwa5!', 'buldog@kwa.com'),
-(13, 'stygus', '123', 'stygus@gmail.com'),
-(14, 'gremlinowski', '123123', 'kamil200599@gmail.com'),
-(15, 'krakra', '123', 'krakra@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -92,14 +71,6 @@ CREATE TABLE `oferty` (
   `ilosc` int(11) NOT NULL,
   `cena` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
-
---
--- Zrzut danych tabeli `oferty`
---
-
-INSERT INTO `oferty` (`ID`, `sprzedawca`, `towar`, `ilosc`, `cena`) VALUES
-(8, 'admin', 'drewno', 150, 34),
-(10, 'admin', 'drewno', 150, 34);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -131,13 +102,13 @@ ALTER TABLE `oferty`
 -- AUTO_INCREMENT dla tabeli `login`
 --
 ALTER TABLE `login`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `oferty`
 --
 ALTER TABLE `oferty`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
