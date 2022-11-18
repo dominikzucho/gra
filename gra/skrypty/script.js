@@ -1,22 +1,21 @@
 //sprawdzenie czy mamy nick
 async function nick() {
-    const response = await fetch("./skrypty/script.php", {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({Status: "ok"})
-    })
-    const x = await response.json();
-    console.log(x);
-    if(x.nick.nick==null){
-        const setnick = document.querySelector('.SetNick');
-        setnick.classList.remove('hidden')
-    }
-    else{
-      setnick.classList.add('hidden')
-    }
+  const response = await fetch("./skrypty/script.php", {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({Status: "ok"})
+  })
+  const x = await response.json();
+  if(x.nick.nick==null){
+      const setnick = document.querySelector('.SetNick');
+      setnick.classList.remove('hidden')
+  }
+  else{
+    setnick.classList.add('hidden')
+  }
 }
 //aktualizacja stytystyk
 async function clickStats(){
@@ -83,7 +82,8 @@ async function clickStone(){
   }
 
 
-  
+
+
 async function click(){
   clickStats();
 }

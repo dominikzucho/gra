@@ -3,6 +3,9 @@ session_start();
 require_once "../polaczenie.php";
 $id = $_SESSION['id'];
 
+
+
+
 $oferta = explode(',',$_POST['oferta']);
 $polaczenie = @new mysqli($host, $user, $password, $name);
     if($polaczenie->connect_errno!=0){}else{
@@ -28,15 +31,19 @@ $polaczenie = @new mysqli($host, $user, $password, $name);
             $polaczenie->query($zapytanie);
             header("Location: ../handel.php");
         }
-        else
-        {
+        else {
             //za mało pieniazkow
+            $_SESSION["biedak"]="<p class='error'>Brak pieniążków!</p>";
+                header("Location: ../handel.php");
         }
      
-        }
+    }
         else{
             //oferta wykupiona
+            $_SESSION["pech"]="<p class='error'>Ofertę już ktoś kupił :(</p>";
+                header("Location: ../handel.php");
         }
+        
     }
 
 ?>

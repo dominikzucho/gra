@@ -61,6 +61,8 @@ require_once "polaczenie.php";
         <input type="number" name="ilosc" min="0">
         <input type="submit" value="Sprzedaj">
         <?php if(isset($_SESSION['BrakSurowcow'])) echo $_SESSION['BrakSurowcow']; ?>
+        <?php if(isset($_SESSION['biedak'])) echo $_SESSION['biedak']; ?>
+        <?php if(isset($_SESSION['pech'])) echo $_SESSION['pech']; ?>
         </form>
     </div>
     

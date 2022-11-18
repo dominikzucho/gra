@@ -26,7 +26,7 @@
 </head>
 <body class="glowne_body">
 <div class="wszystko">
-<div class="SetNick hidden">
+<div id="nick" class="SetNick hidden">
     <form action="./skrypty/setnick.php" method="post">
         <input type="text" name="nick" placeholder="nick">
         <button type="submit">Ustaw</button>
@@ -45,6 +45,16 @@
     <div class="staty"><h4 class="zelazo"></h4></div>
     <div class="staty"><h4 class="kamien"></h4></div>
 </div>
+
+<form action="skrypty/ulepszenie_wood.php" method="POST">
+    <input type="submit" name="update_wood" value="ulepszenie drzewa!">
+</form>
+<form action="skrypty/ulepszenie_stone.php" method="POST">
+    <input type="submit" name="update_wood" value="ulepszenie kamienia!">
+</form>
+<form action="skrypty/ulepszenie_iron.php" method="POST">
+    <input type="submit" name="update_wood" value="ulepszenie zelaza!">
+</form>
 
 
 

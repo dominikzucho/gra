@@ -1,3 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.SetNick{
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    width: 99.99vw;
+    height: 100vh;
+    background-color: red;
+}
 .hidden{
     position:fixed;
     left: 5000px;
