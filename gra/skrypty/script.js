@@ -38,14 +38,10 @@ async function clickStats(){
       if(e.className == "drewno")e.innerHTML = "drewno: "+stats.stats.drewno;
       if(e.className == "zelazo")e.innerHTML = "żelazo: "+stats.stats.zelazo;
       if(e.className == "kamien")e.innerHTML = "kamień: "+stats.stats.kamien;
+      if(e.className == "wojownicy")e.innerHTML = "wojownicy: "+stats.stats.wojownicy;
+      if(e.className == "obroncy")e.innerHTML = "obroncy: "+stats.stats.obroncy;
+      if(e.className == "mur")e.innerHTML = "mur: "+stats.stats.mur;
     });
-    // stat[0].innerHTML = "nick: "+stats.stats.nick;
-    // stat[1].innerHTML = "lvl: "+stats.stats.lvl;
-    // stat[2].innerHTML = "złoto: "+stats.stats.zloto;
-    // stat[3].innerHTML = "dni_vipa: "+stats.stats.dni_vip;
-    // stat[4].innerHTML = "drewno: "+stats.stats.drewno;
-    // stat[5].innerHTML = "żelazo: "+stats.stats.zelazo;
-    // stat[6].innerHTML = "kamień: "+stats.stats.kamien;
   }
 //liczenie ile drewna zebralismy
 async function clickWood(){
@@ -80,8 +76,18 @@ async function clickStone(){
     body: JSON.stringify({wood: "Stone!"})
   })
   }
-
-
+function recruitArmies(){
+  div = document.querySelector('#rekrutuj');
+  
+  if(div.className == "rekrutuj"){
+    div.classList.remove('rekrutuj');
+    div.classList.add('rekrutuj-show');
+  } else {
+    div.classList.remove('rekrutuj-show');
+    div.classList.add('rekrutuj');
+  }
+  
+}
 
 
 async function click(){

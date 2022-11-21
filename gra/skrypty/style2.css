@@ -1,0 +1,32 @@
+
+    body{background-color: #000000;color: white;}
+    .stats{display: flex;}
+    .stats h4{margin: 10px;}
+    #rekrutuj div{
+        width: 50%;
+    }
+    #rekrutuj{
+        display: flex;
+    }
+    .rekrutuj {
+        position: fixed;
+        left: 5000px;
+    }
+    .rekrutuj-show{
+            position: fixed;
+            left: calc(50% - 35vw);
+            top: 100px;
+            width: 70vw;
+            height: 600px;
+            border: 1px solid white;
+        }
+    .zamknij-rekrutacje{
+            position: absolute;
+            margin: 5px;
+            right: 0;
+            top: 0;
+        }
+    .zbierz-zloto-hidden{
+        position: fixed;
+        right: 50000px;
+    }

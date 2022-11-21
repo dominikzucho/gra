@@ -44,6 +44,7 @@
     <div class="staty"><h4 class="drewno"></h4></div>
     <div class="staty"><h4 class="zelazo"></h4></div>
     <div class="staty"><h4 class="kamien"></h4></div>
+    <div class="staty"><h4 class="wojownicy"></h4></div>
 </div>
 
 <form action="skrypty/ulepszenie_wood.php" method="POST">
@@ -75,6 +76,8 @@
 <div class="przejscia2">
 
 <div class="handel"><a href="handel.php">Handluj</a></div>
+
+<div class="kopalnia-zlota"><a href="zloto.php">kopalnia złota</a></div>
 
 <a href="logout.php" class="wyloguj">wyloguj</a>
 </div>
