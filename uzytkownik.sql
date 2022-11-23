@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 18 Lis 2022, 17:14
+-- Czas generowania: 23 Lis 2022, 17:32
 -- Wersja serwera: 10.4.25-MariaDB
 -- Wersja PHP: 8.1.10
 
@@ -43,18 +43,18 @@ CREATE TABLE `gracz` (
   `wojownicy` int(11) NOT NULL,
   `obroncy` int(11) NOT NULL,
   `mur` int(11) NOT NULL,
-  `koszt_ulepszenia` int(11) DEFAULT NULL
+  `koszt_ulepszenia` int(11) NOT NULL,
+  `czasdozlota` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
+  `szczescie` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
 -- Zrzut danych tabeli `gracz`
 --
 
-INSERT INTO `gracz` (`ID`, `nick`, `lvl`, `exp`, `zloto`, `dni_vip`, `drewno`, `drewnoPlus`, `zelazo`, `zelazoPlus`, `kamien`, `kamienPlus`, `wojownicy`, `obroncy`, `mur`, `koszt_ulepszenia`) VALUES
-(1, 'owasz', 1, 0, 10, 0, 0, 2, 0, 1, 0, 1, 0, 0, 0, 50),
-(2, 'klucho', 1, 0, 40, 0, 15, 1, 0, 1, 0, 1, 0, 0, 0, 50),
-(3, 'headi', 1, 0, 50, 0, 78, 2, 0, 1, 0, 1, 0, 0, 0, 50),
-(4, 'adimoss', 1, 0, 27600, 0, 648, 27, 0, 2, 0, 2, 0, 0, 0, 25600);
+INSERT INTO `gracz` (`ID`, `nick`, `lvl`, `exp`, `zloto`, `dni_vip`, `drewno`, `drewnoPlus`, `zelazo`, `zelazoPlus`, `kamien`, `kamienPlus`, `wojownicy`, `obroncy`, `mur`, `koszt_ulepszenia`, `czasdozlota`, `szczescie`) VALUES
+(2, 'a', 1, 0, 500, 100, 900, 5, 13, 1, -100, 1, 0, 0, 0, 400, '', 1),
+(3, 'b', 1, 0, 4650, 0, 699762, 1, 11, 2, 115, 3, 0, 0, 0, 400, '21:15-17-21-10-2022', 1);
 
 -- --------------------------------------------------------
 
@@ -74,10 +74,9 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`ID`, `login`, `haslo`, `email`) VALUES
-(1, 'owasz', '123', 'a@a.a'),
-(2, 'klucho', '123', 'szymonsow15@gmail.com'),
-(3, 'artur', '123', 'szymonsow03@wp.pl'),
-(4, 'adam', '123', 'sroka-aleksandra@o2.pl');
+(1, 'krakra', '123', 'dominikzucho@gmail.coms'),
+(2, 'a', 'a', 'a@a.a'),
+(3, 'b', 'b', 'dominikbzucho@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -92,6 +91,13 @@ CREATE TABLE `oferty` (
   `ilosc` int(11) NOT NULL,
   `cena` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `oferty`
+--
+
+INSERT INTO `oferty` (`ID`, `sprzedawca`, `towar`, `ilosc`, `cena`) VALUES
+(10, 'a', 'drewno', 50, 0);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -123,13 +129,13 @@ ALTER TABLE `oferty`
 -- AUTO_INCREMENT dla tabeli `login`
 --
 ALTER TABLE `login`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `oferty`
 --
 ALTER TABLE `oferty`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
