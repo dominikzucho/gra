@@ -2,13 +2,8 @@
     body{background-color: #000000;color: white;}
     .stats{display: flex;}
     .stats h4{margin: 10px;}
-    #rekrutuj div{
-        width: 50%;
-    }
-    #rekrutuj{
-        display: flex;
-    }
-    .rekrutuj {
+
+    .rekrutuj-hide {
         position: fixed;
         left: 5000px;
     }
@@ -18,15 +13,71 @@
             top: 100px;
             width: 70vw;
             height: 600px;
-            border: 1px solid white;
+            border: 1px solid goldenrod;
         }
-    .zamknij-rekrutacje{
-            position: absolute;
-            margin: 5px;
-            right: 0;
-            top: 0;
+        #jednostka{
+            display: flex;
         }
+
     .zbierz-zloto-hidden{
         position: fixed;
         right: 50000px;
+    }
+
+    .x{
+        font-family: Arial, sans-serif;
+        position: absolute;
+        margin: 5px;
+        right: 0;
+        top: 0;
+        background-color: rgba(237, 59, 65, 0.38);
+        color: white;
+        
+    }
+    .x:hover{
+        border: 1px solid goldenrod;
+        transition: 1s;
+    }
+
+    .okno-hide{
+        position: fixed;
+        right: 50000px; 
+    }
+    .okno-show{
+        position: fixed;
+        top: 100px;
+        width: 70vw;
+        left: calc(50% - 35vw);
+        max-width: 800px;
+        height: 600px;
+        border: 1px solid goldenrod;
+    }
+    @media only screen and (min-device-width: 1150px) {
+       .okno-show{
+        width: 800px;
+        left: calc(50% - 400px);
+    } 
+    }
+    .zbiory-zlota
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+    }
+    .button:hover{
+        transition: 0.32s;
+        font-size: 1.25rem;
+    }
+    .button{
+        transition: 0.32s;
+        font-size: 1.5rem;
+        font-family: Arial, sans-serif;
+        font-weight: 30;
+        color: rgb(137, 137, 137);
+        padding: 7px;
+        background-color: #00000000;
+        border: 1px solid goldenrod;
+        border-radius: 10px;
     }

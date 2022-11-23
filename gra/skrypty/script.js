@@ -76,7 +76,7 @@ async function clickStone(){
     body: JSON.stringify({wood: "Stone!"})
   })
   }
-function recruitArmies(){
+function recruitArmies(){ //stare okienka
   div = document.querySelector('#rekrutuj');
   
   if(div.className == "rekrutuj"){
@@ -86,9 +86,20 @@ function recruitArmies(){
     div.classList.remove('rekrutuj-show');
     div.classList.add('rekrutuj');
   }
-  
 }
+function show_or_hide(elementId,show,hide){
+var element = document.querySelectorAll(`#`+elementId.toString());
 
+if(element[1].classList.item(0) == hide.toString()){
+  element[1].classList.replace(element[1].classList.item(0),show.toString());
+  if(element[0].className == "") {element[0].classList.add('$$$');}
+  element[0].classList.replace(element[0].classList.item(0),hide.toString());
+} else {
+  if(element[0].className == "")element[0].classList.add('$$$');
+  element[0].classList.replace(element[0].classList.item(0),null);
+  element[1].classList.replace(element[1].classList.item(0),hide.toString());
+}
+}
 
 async function click(){
   clickStats();
@@ -100,5 +111,5 @@ function start(){
   nick();
   clickStats();
 }
-start()
+start();
 // document.onload(start()); //gdy strona sie załaduje to wywoła start()

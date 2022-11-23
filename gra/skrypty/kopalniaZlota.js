@@ -9,7 +9,7 @@
         const czas = await response.json();
         return czas.czas
       }
-      async function goldenCooldownCount(rok, miesiac, dzien, godzina, minuta, sekunda){
+    async function goldenCooldownCount(rok, miesiac, dzien, godzina, minuta, sekunda){
         var aktualnyCzas = new Date();
         const div = document.querySelector("#za-ile");
         const form = document.querySelector("#zbierz-zloto");
@@ -40,12 +40,29 @@
             form.classList.remove('zbierz-zloto');
             form.classList.add('zbierz-zloto-hidden');
           }
-
         return pozostalyCzas;
       }
-    var goldcd =  goldenCooldown().then((value) => { goldcd = value });
 
+    async function koszt(){
+      const response = await fetch("./skrypty/kosztzlota.php", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST"
+      })
+      var x = await response.json();
+      document.querySelector('.koszt-zbioru').innerHTML = x.koszt
+    }
+    
     window.setInterval('refresh()', 1000); 	
         async function refresh() {
         goldenCooldownCount(goldcd[4],goldcd[3],goldcd[2],goldcd[0].split(":")[0],goldcd[0].split(":")[1],goldcd[1]);
         }
+        
+  var goldcd = goldenCooldown().then((value) => { goldcd = value;
+    goldenCooldownCount(goldcd[4],goldcd[3],goldcd[2],goldcd[0].split(":")[0],goldcd[0].split(":")[1],goldcd[1]); });
+  koszt();
+
+  
+  

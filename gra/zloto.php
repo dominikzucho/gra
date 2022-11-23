@@ -18,11 +18,11 @@
         <h4 class="zloto"></h4>
     </div>
     <div class="kup-jednostke">
-        <button onclick="recruitArmies()">Rekrutuj</button>
-        <div class="rekrutuj" id="rekrutuj">
+        <button onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">Rekrutuj</button>
+        <div class="rekrutuj-hide" id="jednostka">
             <div class="obroncy">obrońcy</div>
             <div class="wojownicy">wojownicy</div>
-            <button class="zamknij-rekrutacje" onclick="recruitArmies()">x</button>
+            <button class="x" onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">x</button>
         </div>
     </div>
     <div class="zloto">
@@ -33,6 +33,18 @@
                 <label for="zbierz">Twoje złoto jest gotowe do zebrania!</label>
                 <input type="submit" value="zbierz" id="zbierz">
             </form>
+        </div>
+
+        <button onclick="show_or_hide('gornicy','okno-show','okno-hide')" id="gornicy">Wyślij górników</button>
+        <div class="okno-hide zbiory-zlota" id="gornicy">
+            <div class="gornik-img" style="background-color: red; width: 300px; height:450px"></div>
+            <div class="koszt-zbioru">drewno2 kamien1</div>
+            <div class="zbierz">
+                <form action="./skrypty/rekrutujGornikow.php" method="post">
+                    <input type="submit" value="zlecenie" class="button">
+                </form>
+            </div>
+            <button onclick="show_or_hide('gornicy','okno-show','okno-hide')" class="x" id="gornicy">x</button>
         </div>
     </div>
     <script src="./skrypty/script.js"></script>
