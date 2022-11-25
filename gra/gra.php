@@ -23,17 +23,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gra</title>
     <link rel="stylesheet" href="./skrypty/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body class="glowne_body">
 <div class="wszystko">
 <div id="nick" class="SetNick hidden">
+    <div class="zawartosc">
+    <div class="napis">
+    <h1>Witaj podróżniku!</h1>
+    </div>
+    <div class="napis2">
+        <h2>Aby wejść do wioski ptorzebujesz specjalnego zaproszenia. Aby takowe otrzymać musimy widzieć jak się do ciebie zwracać, dlatego ustaw swój NICK.</h2>
+    </div>
+    <div class="ustawnick">
     <form action="./skrypty/setnick.php" method="post">
-        <input type="text" name="nick" placeholder="nick">
-        <button type="submit">Ustaw</button>
+        <input class="log" type="text" name="nick" placeholder="nick">
+        <button  class="przycisk1" type="submit">Ustaw</button>
     </form>
     <p class="error">
         <?php if(isset($_SESSION['BusyNickname']))echo $_SESSION['BusyNickname'] ?>
     </p>
+    </div>
+    </div>
 </div>
 
 <div class="stats">

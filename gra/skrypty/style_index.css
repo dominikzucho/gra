@@ -1,0 +1,98 @@
+body{
+    background-image: url(../img/tło_logowanie_główne.jpg);
+    font-family: 'Courgette', cursive;
+}
+
+.formularz{
+background: url(../img/logowanie_tło2.png);
+background-size: cover;
+width: 560px;
+height: 750px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.log{
+margin: 5px;
+background-color: rgb(110 ,64 ,48);
+border: 5px solid peru;
+height: 50px;
+width: 400px;
+font-family: 'Courgette', cursive;
+font-size: 30px;
+color: peru;
+text-align: center;
+box-shadow: 0px 5px 5px black;
+}
+
+.log1{
+margin: 5px;
+background-color: rgb(110 ,64 ,48);
+border: 5px solid peru;
+height: 50px;
+width: 415px;
+font-family: 'Courgette', cursive;
+font-size: 30px;
+color: peru;
+box-shadow: 0px 5px 5px black;
+}
+
+.log2{
+text-decoration: none;
+color: peru;
+}
+
+.opcje1{
+margin-top: 20px;
+background-color: rgb(110 ,64 ,48);
+border: 5px solid peru;
+height: 50px;
+width: 200px;
+font-family: 'Courgette', cursive;
+font-size: 20px;
+color: peru;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.opcje{
+display: flex;
+justify-content: center;
+}
+.okienko{
+width: 100%;
+}
+
+.przycisk
+{
+margin-top: 15px;
+margin-left:auto;
+margin-right: auto;
+}
+body{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+}
+h1{
+margin-left: auto;
+margin-right: auto;
+}
+
+.przycisk1{
+    background-color: rgb(110 ,64 ,48);
+    border: 5px solid peru;
+height: 50px;
+width: 418px;
+font-family: 'Courgette', cursive;
+font-size: 30px;
+color: peru;
+text-align: center;
+box-shadow: 0px 5px 5px black;
+}

@@ -92,28 +92,17 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rejestracja</title>
-    <style>
-        body{
-            font-family: Arial;
-            background-color: silver;
-            
-        }
-
-        form>input{
-            display: block;
-            margin: 10px;
-        }
-
-        .error{
-            color: red;
-            margin: 10px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./skrypty/style_index.css">
 </head>
 <body>
     <h2>Wpisz dane aby założyć konto: </h2>
+    <div class="formularz">
+
         <form action="rejestracja.php" method="POST">
-            <input type="text" name="login" placeholder="Login">
+        <div class="okienko"><input class="log" type="text" name="login" placeholder="Login"></div>
             <div class="error">
                 <?php
                 if(isset( $_SESSION['login_error']))
@@ -123,7 +112,7 @@ else{
                 }
                 ?>
             </div>
-            <input type="email" name="email" placeholder="Email">
+            <div class="okienko"><input class="log" type="email" name="email" placeholder="Email"></div>
             <div class="error">
                 <?php
                 if(isset( $_SESSION['email_error']))
@@ -133,8 +122,8 @@ else{
                 }
                 ?>
             </div>
-            <input type="password" name="haslo1" placeholder="Hsało">
-            <input type="password" name="haslo2" placeholder="Powtórz hsało">
+            <div class="okienko"><input class="log" type="password" name="haslo1" placeholder="Hsało"></div>
+            <div class="okienko"><input class="log" type="password" name="haslo2" placeholder="Powtórz hsało"></div>
             <div class="error">
                 <?php
                 if(isset( $_SESSION['haslo_error']))
@@ -144,7 +133,8 @@ else{
                 }
                 ?>
             </div>
-            <input type="submit" value="Załóż konto" name="zaloz">
+            <input class="przycisk1" type="submit" value="Załóż konto" name="zaloz">
         </form>
+            </div>
         </body>
 </html>
