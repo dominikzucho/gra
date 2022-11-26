@@ -18,7 +18,7 @@ $sekunda = explode("-",date('Y-m-d-H-i-s',$aktualnyCzas))[5];
 $format = "$godzina:$minuta-$sekunda-$dzien-$miesiac-$rok";
 $drewnominus = 100 * $lvl;
 $kamienminus = 100 * $lvl;
-if(200 * $lvl < $drewno && 100 * $lvl < $kamien){
+if(200 * $lvl <= $drewno && 100 * $lvl <= $kamien){
     $zapytanie = "UPDATE gracz SET `drewno`=drewno-$drewnominus,`kamien`=kamien-$kamienminus ,`czasdozlota`='$format' WHERE ID = $id";
     $polaczenie->query($zapytanie);
     $polaczenie->close();

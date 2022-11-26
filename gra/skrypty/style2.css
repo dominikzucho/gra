@@ -51,6 +51,8 @@
         max-width: 800px;
         height: 600px;
         border: 1px solid goldenrod;
+        background-color: black;
+        z-index: 2;
     }
     @media only screen and (min-device-width: 1150px) {
        .okno-show{
@@ -80,4 +82,77 @@
         background-color: #00000000;
         border: 1px solid goldenrod;
         border-radius: 10px;
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        height: 98vh;
+    }
+    .stats{
+        position: fixed;
+    }
+    .img-zloto img{
+        width: 600px;
+        height: 600px;
+        position: absolute;
+    }
+    .img-zloto{
+        width: 600px;
+        height: 600px;
+    }
+    .zlotoo{
+        padding-top: 100px;
+        
+    }
+    .kup-jednostke{
+        position: fixed;
+    }
+    @keyframes fall {
+        0% {
+        top: -100px;
+        }
+        100%{
+          top: 50%;  
+        }
+    }
+    .hidden{
+        position: fixed;
+        right: 50000px; 
+    }
+    .fall{
+        position: absolute;
+        left: 45%;
+        top: 35%;
+        animation: fall 2.5s infinite linear;
+    }
+    #zloto{
+        width: 100px;
+        height: 100px;
+        z-index: 0;
+    }
+    .img-zloto img:nth-child(2){
+        z-index: 1;
+    }
+    button {
+        transition: 0.32s;
+        font-size: 1.5rem;
+        font-family: Arial, sans-serif;
+        font-weight: 30;
+        color: rgb(137, 137, 137);
+        padding: 7px;
+        background-color: #00000000;
+        border: 1px solid goldenrod;
+        border-radius: 10px;
+    }
+    .gornik-img img
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .za-ile{
+        text-align: center;
+        font-size: 2rem;
+        position: relative;
+        bottom: 100px;
+        
     }
