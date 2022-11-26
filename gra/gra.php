@@ -28,6 +28,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body class="glowne_body">
+
+    
 <div class="wszystko">
 <div id="nick" class="SetNick hidden">
     <div class="zawartosc">
@@ -49,53 +51,182 @@
     </div>
 </div>
 
+<div class="statstlo">
 <div class="stats">
     <div class="staty"><h4 class="nick"></h4></div>
     <div class="staty"><h4 class="lvl"></h4></div>
+    <div class="obrazek">O</div> 
     <div class="staty"><h4 class="zloto"></h4></div>
+    <div class="obrazek">O</div>
     <div class="staty"><h4 class="dnivip"></h4></div>
-    <div class="staty"><h4 class="drewno"></h4></div>
-    <div class="staty"><h4 class="zelazo"></h4></div>
-    <div class="staty"><h4 class="kamien"></h4></div>
-    <div class="staty"><h4 class="wojownicy"></h4></div>
+    <div class="obrazek">O</div>
+    <div class="staty"><div class="odrewno"><img class ="img" src="./img/drewno_ikona.png" alt=""></div><h4 class="drewno"></h4></div>
+    <div class="obrazek">O</div>
+    <div class="staty"><div class="odrewno"><img class ="img" src="./img/zelazo_ikona.png" alt=""></div><h4 class="zelazo"></h4></div>
+    <div class="obrazek">O</div>
+    <div class="staty"><div class="odrewno"><img class ="img" src="./img/kamien_ikona.png" alt=""></div><h4 class="kamien"></h4></div>
+
+</div>
 </div>
 
+<div class="ulepszenia">
+    <h4>Koszt:</h4>
 <form action="skrypty/ulepszenie_wood.php" method="POST">
-    <input type="submit" name="update_wood" value="ulepszenie drzewa!">
+    <input class="przycisk2" type="submit" name="update_wood" value="drzewo">
 </form>
 <form action="skrypty/ulepszenie_stone.php" method="POST">
-    <input type="submit" name="update_wood" value="ulepszenie kamienia!">
+    <input class="przycisk2" type="submit" name="update_wood" value="kamien">
 </form>
 <form action="skrypty/ulepszenie_iron.php" method="POST">
-    <input type="submit" name="update_wood" value="ulepszenie zelaza!">
+    <input class="przycisk2" type="submit" name="update_wood" value="zelazo">
 </form>
+</div>
+<div class="tlowioska">
 
 
 
-<div class="przejscia">
+<!-- <div class="przejscia">
 <div class="las">
     <a href="las.php">IDŹ DO LASU</a>
+</div> -->
+<div class="przejscia">
+<div class="las">
+        <button class="przycisk" onclick="show_or_hide('okno1','okno1-show','okno1-hide')" id="okno1">LAS</button>
+        <div class="okno1-hide" id="okno1">
+            <div class="drzewo">
+  
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra</title>
+    <link rel="stylesheet" href="./skrypty/style.css">
+</head>
+<body class="las_body">
+<div class="wszystko">
+<div class="SetNick hidden">
+    <form action="./skrypty/setnick.php" method="post">
+        <input type="text" name="nick" placeholder="nick">
+        <button type="submit">Ustaw</button>
+    </form>
+    <p class="error">
+        <?php if(isset($_SESSION['BusyNickname']))echo $_SESSION['BusyNickname'] ?>
+    </p>
+</div>
+<div class="ikona_dreno">
+    <div class="drewnoo" onclick="clickWood()"></div>
 </div>
 
-<div class="kopalnia">
+
+</div>
+
+<script src="./skrypty/script.js"></script>
+</div>
+            <button class="x" onclick="show_or_hide('okno1','okno1-show','okno1-hide')" id="okno1">x</button>
+        </div>
+    </div>
+
+<!-- <div class="kopalnia">
     <a href="kopalnia.php">IDŹ DO KOPALNI</a>
-</div>
+</div> -->
 
 <div class="kopalnia">
-    <a href="kowal.php">IDŹ DO KOWALA</a>
+        <button class="przycisk" onclick="show_or_hide('okno2','okno2-show','okno2-hide')" id="okno2">KOPALNIA</button>
+        <div class="okno2-hide" id="okno2">
+            <div class="kamien">
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra</title>
+    <link rel="stylesheet" href="./skrypty/style.css">
+</head>
+<body class="kopalnia_body">
+<div class="wszystko">
+<div class="SetNick hidden">
+    <form action="./skrypty/setnick.php" method="post">
+        <input type="text" name="nick" placeholder="nick">
+        <button type="submit">Ustaw</button>
+    </form>
+    <p class="error">
+        <?php if(isset($_SESSION['BusyNickname']))echo $_SESSION['BusyNickname'] ?>
+    </p>
 </div>
+
+<div class="ikona_kamien">
+<div class="kamienn" onclick="clickStone()"></div>
+</div>
+
+</div>
+
+<script src="./skrypty/script.js"></script>
+            </div>
+            <button class="x" onclick="show_or_hide('okno2','okno2-show','okno2-hide')" id="okno2">x</button>
+        </div>
+    </div>
+
+<!-- <div class="kopalnia">
+    <a href="kowal.php">IDŹ DO KOWALA</a>
+</div> -->
+
+<div class="kowal">
+        <button class="przycisk" onclick="show_or_hide('okno3','okno3-show','okno3-hide')" id="okno3">KOWAL</button>
+        <div class="okno3-hide" id="okno3">
+            <div class="zelazo">
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra</title>
+    <link rel="stylesheet" href="./skrypty/style.css">
+</head>
+<body class="kowal_body">
+<div class="wszystko">
+<div class="SetNick hidden">
+    <form action="./skrypty/setnick.php" method="post">
+        <input type="text" name="nick" placeholder="nick">
+        <button type="submit">Ustaw</button>
+    </form>
+    <p class="error">
+        <?php if(isset($_SESSION['BusyNickname']))echo $_SESSION['BusyNickname'] ?>
+    </p>
+</div>
+
+
+<div class="ikona_zelazo">
+<div class="zelazoo" onclick="clickIron()"></div>
+</div>
+
+</div>
+
+
+<script src="./skrypty/script.js"></script>
+            </div>
+            <button class="x" onclick="show_or_hide('okno3','okno3-show','okno3-hide')" id="okno3">x</button>
+        </div>
+    </div>
 </div>
 
 <div class="przejscia2">
 
-<div class="handel"><a href="handel.php">Handluj</a></div>
+<div class="przycisk"><a class="handluj" href="handel.php">Handluj</a></div>
 
-<div class="kopalnia-zlota"><a href="zloto.php">kopalnia złota</a></div>
+<div class="przycisk"><a class="zloto1" href="zloto.php">kopalnia złota</a></div>
 
-<a href="logout.php" class="wyloguj">wyloguj</a>
+<a class="przycisk" href="logout.php" class="wyloguj">wyloguj</a>
 </div>
 </div>
 
 <script src="./skrypty/script.js"></script>
+
+</div>
 </body>
 </html>

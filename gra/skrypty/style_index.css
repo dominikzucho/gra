@@ -86,6 +86,8 @@ margin-right: auto;
 }
 
 .przycisk1{
+    margin-top: 30px;
+    margin-left: 5px;
     background-color: rgb(110 ,64 ,48);
     border: 5px solid peru;
 height: 50px;

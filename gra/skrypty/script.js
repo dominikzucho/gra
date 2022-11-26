@@ -92,11 +92,11 @@ var element = document.querySelectorAll(`#`+elementId.toString());
 
 if(element[1].classList.item(0) == hide.toString()){
   element[1].classList.replace(element[1].classList.item(0),show.toString());
-  if(element[0].className == "") {element[0].classList.add('$$$');}
-  element[0].classList.replace(element[0].classList.item(0),hide.toString());
+  // if(element[0].className == "") {element[0].classList.add('$$$');}
+  // element[0].classList.replace(element[0].classList.item(0),hide.toString());
 } else {
-  if(element[0].className == "")element[0].classList.add('$$$');
-  element[0].classList.replace(element[0].classList.item(0),null);
+  // if(element[0].className == "")element[0].classList.add('$$$');
+  // element[0].classList.replace(element[0].classList.item(0),null);
   element[1].classList.replace(element[1].classList.item(0),hide.toString());
 }
 }

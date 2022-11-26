@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-body{background-color: #000000;color: white;}
+body{background-color: #000000;color: white; font-family: 'Courgette', cursive;}
 
 .SetNick{
     background-image: url(../img/nick_tło.jpg);
@@ -16,6 +16,7 @@ body{background-color: #000000;color: white;}
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
+    z-index: 1;
 }
 
 .zawartosc{
@@ -32,26 +33,22 @@ body{background-color: #000000;color: white;}
     left: 5000px;
 }
 .glowne_body{
-    background-color:green; 
     background-image: url(../img/tło_główne.png);
-    background-size: 100%;
+    background-size: cover;
 
 }
 
-.las_body{
-    background-image: url(../img/Las_tło.jpg);
-    background-size: 100%;
+.tlowioska{
+    background-image: url(../img/wioska_tło.jpg);
+    background-size: cover;
+    position: fixed;
+ margin-left: calc(50% - 30.5vw);
+        top: 205px;
+        width: 61.25vw;
+        height: 640px;
 }
 
-.kopalnia_body{
-    background-image: url(../img/kopalnia_tło.jpg);
-    background-size: 100%;
-}
 
-.kowal_body{
-    background-image: url(../img/kowal_tło.jpg);
-    background-size: 100%;
-}
 
 .error{
     color: rgb(255, 0, 0);
@@ -62,7 +59,18 @@ body{background-color: #000000;color: white;}
     display: flex;
     justify-content: center;
     justify-content: space-between;
-    margin: 25% 30% 0 30%;
+    flex-direction: row;
+    margin: 5% 30% 0 30%;
+}
+.ulepszenia{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 10vw;
+    height: 75vh;
+    margin-top: 5%;
 }
 
 .przejscia2{
@@ -75,7 +83,8 @@ body{background-color: #000000;color: white;}
 .ikona_dreno{
 display: flex;
 justify-content: center;
-margin-top: 10%;
+margin-left: 150px;
+margin-top: 15%;
 }
 .drewnoo
 {
@@ -113,11 +122,42 @@ margin-top: 10%;
     width: 50vw; height: 50vh;
 }
 
+.staty{
+    background-color: rgb(110 ,64 ,48);
+    border: 1px solid peru;
+    box-shadow: 0px 5px 5px black;
+    padding: 3px 5px 3px 5px;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
 .stats{
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
-    margin: 2.5% 15% 0 15%;
+    margin: 4.5% 15% 0 15%;
+}
+
+
+
+.statstlo{
+    background-image: url(../img/belka.png);
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    width: 99.98vw;
+    height: 20vh;
+    margin-top: 0px;
+}
+
+.odrewno{
+    width: 30px;
+    height: 30px;
+    margin-right: 2px;
+}
+
+.img{
+    width: 30px;
+    height: 30px;
 }
 
 .log{
@@ -161,3 +201,115 @@ margin-top: 10%;
         font-family: 'Courgette', cursive;
         color: black;
     }
+
+    .okno1-hide {
+        position: fixed;
+        left: 5000px;
+    }
+
+    .okno1-show{
+        position: fixed;
+        background-image: url(../img/las_tło.jpg);
+    background-size: cover;
+        left: calc(50% - 30.5vw);
+        top: 205px;
+        width: 61.25vw;
+        height: 640px;
+        border: 1px solid goldenrod;
+    }
+    #okno1{
+        display: flex;
+    }
+
+    .okno2-hide {
+        position: fixed;
+        left: 5000px;
+    }
+
+    .okno2-show{
+        position: fixed;
+            background-image: url(../img/tło_kopalnia.jpg);
+            background-size: cover;
+        left: calc(50% - 30.5vw);
+        top: 205px;
+        width: 61.25vw;
+        height: 640px;
+        border: 1px solid goldenrod;
+    }
+    #okno2{
+        display: flex;
+    }
+
+    .okno3-hide {
+        position: fixed;
+        left: 5000px;
+    }
+
+    .okno3-show{
+        position: fixed;
+        background-image: url(../img/kowal_tło.jpg);
+        background-size: cover;
+        left: calc(50% - 30.5vw);
+        top: 205px;
+        width: 61.25vw;
+        height: 640px;
+        border: 1px solid goldenrod;
+    }
+    #okno3{
+        display: flex;
+    }
+
+    .x{
+        font-family: Arial, sans-serif;
+        position: absolute;
+        margin: 5px;
+        right: 0;
+        top: 0;
+        background-color: rgba(237, 59, 65, 0.38);
+        color: white;
+        
+    }
+
+    .x:hover{
+        border: 1px solid goldenrod;
+        transition: 1s;
+    }
+
+    .przycisk{
+        margin-top: 30px;
+        margin-left: 5px;
+        background-color: rgb(110 ,64 ,48);
+        border: 5px solid peru;
+    height: 50px;
+    width: 150px;
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+    color: peru;
+    text-align: center;
+    box-shadow: 0px 5px 5px black;
+    }
+
+    .przycisk2{
+        margin-top: 100px;
+        margin-left: 5px;
+        background-color: rgb(110 ,64 ,48);
+        border: 5px solid peru;
+    height: 50px;
+    width: 150px;
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+    color: peru;
+    text-align: center;
+    box-shadow: 0px 5px 5px black;
+    }
+
+    .handluj{
+        color: peru;
+    }
+
+    .zloto1{
+        color: peru;
+        font-size: 20px;
+    }
+
+   
