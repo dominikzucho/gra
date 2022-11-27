@@ -62,15 +62,15 @@
     <div class="obrazek">O</div>
     <div class="staty"><div class="odrewno"><img class ="img" src="./img/drewno_ikona.png" alt=""></div><h4 class="drewno"></h4></div>
     <div class="obrazek">O</div>
-    <div class="staty"><div class="odrewno"><img class ="img" src="./img/zelazo_ikona.png" alt=""></div><h4 class="zelazo"></h4></div>
-    <div class="obrazek">O</div>
     <div class="staty"><div class="odrewno"><img class ="img" src="./img/kamien_ikona.png" alt=""></div><h4 class="kamien"></h4></div>
+    <div class="obrazek">O</div>
+    <div class="staty"><div class="odrewno"><img class ="img" src="./img/zelazo_ikona.png" alt=""></div><h4 class="zelazo"></h4></div>
 
 </div>
 </div>
 
 <div class="ulepszenia">
-    <h4>Koszt:</h4>
+    <h4>Koszt ulepszenia:</h4>
 <form action="skrypty/ulepszenie_wood.php" method="POST">
     <input class="przycisk2" type="submit" name="update_wood" value="drzewo">
 </form>
@@ -220,13 +220,18 @@
 <div class="przycisk"><a class="handluj" href="handel.php">Handluj</a></div>
 
 <div class="przycisk"><a class="zloto1" href="zloto.php">kopalnia złota</a></div>
-
-<a class="przycisk" href="logout.php" class="wyloguj">wyloguj</a>
 </div>
+
+
 </div>
 
 <script src="./skrypty/script.js"></script>
 
+</div>
+
+<div class="ustawienia">
+<div class="przycisk_ustawienia"><a class="przycisk3" href="logout.php" class="wyloguj">wyloguj</a></div>
+<div class="przycisk_ustawienia"><a class="przycisk3" href="zmianahasla.php">Zmiana Hasła</a></div>
 </div>
 </body>
 </html>

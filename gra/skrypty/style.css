@@ -33,7 +33,7 @@ body{background-color: #000000;color: white; font-family: 'Courgette', cursive;}
     left: 5000px;
 }
 .glowne_body{
-    background-image: url(../img/tło_główne.png);
+    background-image: url(../img/tlo_glowne.jpg);
     background-size: cover;
 
 }
@@ -41,6 +41,8 @@ body{background-color: #000000;color: white; font-family: 'Courgette', cursive;}
 .tlowioska{
     background-image: url(../img/wioska_tło.jpg);
     background-size: cover;
+    border: 15px solid rgb(110 ,64 ,48);
+    border-radius:20px;
     position: fixed;
  margin-left: calc(50% - 30.5vw);
         top: 205px;
@@ -60,10 +62,11 @@ body{background-color: #000000;color: white; font-family: 'Courgette', cursive;}
     justify-content: center;
     justify-content: space-between;
     flex-direction: row;
-    margin: 5% 30% 0 30%;
+    margin: 16% 15% 0 15%;
 }
 .ulepszenia{
-    background-color: red;
+    background-image: url(../img/wiszaca_belka.png);
+    background-size: cover;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -97,7 +100,8 @@ margin-top: 15%;
 .ikona_zelazo{
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-left: 150px;
+margin-top: 14%;
     }
 
 .zelazoo
@@ -111,7 +115,8 @@ margin-top: 15%;
 .ikona_kamien{
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-left: 150px;
+margin-top: 14%;
     }
 
 .kamienn
@@ -211,8 +216,8 @@ margin-top: 15%;
         position: fixed;
         background-image: url(../img/las_tło.jpg);
     background-size: cover;
-        left: calc(50% - 30.5vw);
-        top: 205px;
+        left: calc(50% - 29.8vw);
+        top: 219px;
         width: 61.25vw;
         height: 640px;
         border: 1px solid goldenrod;
@@ -229,9 +234,8 @@ margin-top: 15%;
     .okno2-show{
         position: fixed;
             background-image: url(../img/tło_kopalnia.jpg);
-            background-size: cover;
-        left: calc(50% - 30.5vw);
-        top: 205px;
+            left: calc(50% - 29.8vw);
+            top: 219px;
         width: 61.25vw;
         height: 640px;
         border: 1px solid goldenrod;
@@ -249,8 +253,8 @@ margin-top: 15%;
         position: fixed;
         background-image: url(../img/kowal_tło.jpg);
         background-size: cover;
-        left: calc(50% - 30.5vw);
-        top: 205px;
+        left: calc(50% - 29.8vw);
+        top: 219px;
         width: 61.25vw;
         height: 640px;
         border: 1px solid goldenrod;
@@ -276,6 +280,10 @@ margin-top: 15%;
     }
 
     .przycisk{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
         margin-top: 30px;
         margin-left: 5px;
         background-color: rgb(110 ,64 ,48);
@@ -287,10 +295,54 @@ margin-top: 15%;
     color: peru;
     text-align: center;
     box-shadow: 0px 5px 5px black;
+    text-decoration: none;
     }
 
     .przycisk2{
+        
         margin-top: 100px;
+        margin-left: 5px;
+        background-color: rgb(110 ,64 ,48);
+        border: 5px solid peru;
+
+    height: 50px;
+    width: 150px;
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+    color: peru;
+    text-align: center;
+    box-shadow: 0px 5px 5px black;
+    
+    }
+
+    .handluj{
+        color: peru;
+        text-decoration: none;
+    }
+
+    .zloto1{
+        color: peru;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .ustawienia{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        bottom: 100px;
+        left: 88%;
+    }
+
+    .przycisk_ustawienia{
+        margin-top: 30px;
+        display: block;
+    }
+
+    .przycisk3{
+        margin-top: 30px;
         margin-left: 5px;
         background-color: rgb(110 ,64 ,48);
         border: 5px solid peru;
@@ -301,15 +353,7 @@ margin-top: 15%;
     color: peru;
     text-align: center;
     box-shadow: 0px 5px 5px black;
-    }
-
-    .handluj{
-        color: peru;
-    }
-
-    .zloto1{
-        color: peru;
-        font-size: 20px;
+    text-decoration: none;
     }
 
    

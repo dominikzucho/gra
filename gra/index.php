@@ -30,10 +30,11 @@
         
         
 
-        </div>
+        
         <?php 
     if(isset($_SESSION['blad'])) echo $_SESSION['blad']; 
     ?>
+    </div>
     </form>
     
 </body>
