@@ -13,7 +13,7 @@ require_once "polaczenie.php";
     <link rel="stylesheet" href="./skrypty/style.css">
     <style>
         body{
-            background-color:cadetblue;
+            background-color:rgb(110 ,64 ,48);
             display: flex;
             flex-direction: column;
         }
@@ -24,8 +24,9 @@ require_once "polaczenie.php";
         .oferty{
             width: 100%;
             flex-basis: 50vh;
-            border:2px solid black;
-            background-color:darkgrey;
+            border: 5px solid peru;
+            background-image: url(img/tablica.png);
+            background-size: cover;
         }
         .stats{
             display: flex;
@@ -33,6 +34,18 @@ require_once "polaczenie.php";
         }
        .oferta{
         display: flex;
+        background-color: rgb(110 ,64 ,48);
+    border: 5px solid peru;
+    font-family: 'Courgette', cursive;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-left: 5px;
+    width: 98.5vw;
+       }
+
+       p{
+        margin-right: 10px;
+        margin-left: 10px;
        }
     </style>
 </head>
@@ -66,7 +79,7 @@ require_once "polaczenie.php";
         </form>
     </div>
     
-    <a href="../gra/gra.php">gra</a>
+    <div class="przycisk_ustawienia"><a class="przycisk3" href="../gra/gra.php">gra</a></div>
 
     
     <script src="./skrypty/script.js"></script>
