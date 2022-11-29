@@ -78,7 +78,71 @@
       var x = await response.json();
       document.querySelector('.koszt-zbioru').innerHTML = x.koszt
     }
-    
+    async function cenaObroncy(){
+      const response = await fetch("./skrypty/cena-obroncy.php", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST"
+      })
+      var x = await response.json();
+      document.querySelector('.obronca-cena').innerHTML = x.koszt
+    }
+    async function cenaWojownika(){
+      const response = await fetch("./skrypty/cena-wojownika.php", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST"
+      })
+      var x = await response.json();
+      document.querySelector('.wojownik-cena').innerHTML = x.koszt
+    }
+    async function gracze(){
+      const response = await fetch("./skrypty/atak-gracza.php", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST"
+      })
+      var x = await response.json();
+
+      const div = document.querySelector('#gracze');
+      for(var i = 0; i<x.gracz.length;i++){
+        const gracz = document.createElement('div');
+
+        const info1 = document.createElement('p'); 
+        info1.innerHTML = "Nick: ";
+        const nick = document.createElement('div');
+        nick.innerHTML = x.gracz[i][1];
+
+
+
+        gracz.appendChild(info1);
+        gracz.appendChild(nick);
+        div.appendChild(gracz);
+
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     window.setInterval('refresh()', 1000); 	
         async function refresh() {
         goldenCooldownCount(goldcd[4],goldcd[3],goldcd[2],goldcd[0].split(":")[0],goldcd[0].split(":")[1],goldcd[1]);
@@ -86,7 +150,9 @@
         
   var goldcd = goldenCooldown().then((value) => { goldcd = value;
    goldenCooldownCount(goldcd[4],goldcd[3],goldcd[2],goldcd[0].split(":")[0],goldcd[0].split(":")[1],goldcd[1]); });
-  koszt();
 
+  koszt();
+  cenaObroncy();
+  cenaWojownika();
   
   

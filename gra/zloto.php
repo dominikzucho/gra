@@ -18,14 +18,8 @@
         <h4 class="mur"></h4>
         <h4 class="zloto"></h4>
     </div>
-    <div class="kup-jednostke">
-        <button onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">Rekrutuj</button>
-        <div class="rekrutuj-hide" id="jednostka">
-            <div class="obroncy">obrońcy</div>
-            <div class="wojownicy">wojownicy</div>
-            <button class="x" onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">x</button>
-        </div>
-    </div>
+    <div id="notifications"></div>
+    
     <div class="zlotoo">
         <div class="img-zloto"><img src="./img/wozekidealny2.png"><img src="./img/wozekidealny1.png"></div>
         <div class="za-ile" id="za-ile"></div>
@@ -47,6 +41,39 @@
             <button onclick="show_or_hide('gornicy','okno-show','okno-hide')" class="x" id="gornicy">x</button>
         </div>
         <img src="./img/zloto.png" class="fall" id="zloto">
+        <div class="kup-jednostke">
+            <button onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">Rekrutuj</button>
+            <div class="rekrutuj-hide" id="jednostka">
+            <div class="obroncy">
+                <img src="obronca.png" alt="obronca">
+                <div class="obronca-cena"></div>
+                <form action="./skrypty/kup-obronce.php" method="post">
+                    <input type="number" name="ilosc" placeholder="Ile rekrutujesz?">
+                    <input type="submit" value="kup" class="button">
+                </form>
+            </div>
+            <div class="wojownicy">
+            <img src="wojownik.png" alt="wojownik">
+                <div class="wojownik-cena"></div>
+                <form action="./skrypty/kup-wojownika.php" method="post">
+                    <input type="number" name="ilosc" placeholder="Ile rekrutujesz?">
+                    <input type="submit" value="kup" class="button">
+                </form>
+            </div>
+            <button class="x" onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">x</button>
+            </div>
+        </div>
+        <button id="atak" onclick="show_or_hide('atak','okno-show','okno-hide')">atak</button>
+        <div class="okno-hide" id="gracze">
+
+
+        <button id="atak" class="x" onclick="show_or_hide('atak','okno-show','okno-hide')">x</button>
+        </div>
+        
+
+        <div><a class="button" href="./gra.php">wioska</a></div>
+        </div>
+        
     </div>
     </section>
     <script src="./skrypty/script.js"></script>

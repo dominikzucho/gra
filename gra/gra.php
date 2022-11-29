@@ -137,15 +137,6 @@
         <div class="okno2-hide" id="okno2">
             <div class="kamien">
 
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gra</title>
-    <link rel="stylesheet" href="./skrypty/style.css">
-</head>
 <body class="kopalnia_body">
 <div class="wszystko">
 <div class="SetNick hidden">
@@ -224,7 +215,7 @@
 
 
 </div>
-
+<div id="notifications"></div>
 <script src="./skrypty/script.js"></script>
 
 </div>
@@ -233,5 +224,7 @@
 <div class="przycisk_ustawienia"><a class="przycisk3" href="logout.php" class="wyloguj">wyloguj</a></div>
 <div class="przycisk_ustawienia"><a class="przycisk3" href="zmianahasla.php">Zmiana Hasła</a></div>
 </div>
+
+
 </body>
 </html>

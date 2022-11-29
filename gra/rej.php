@@ -67,7 +67,7 @@ else
     //wyciagamy id
     $id = $rezultat->fetch_row()[0];
     }
-    $rezultat = @$polaczenie->query("INSERT INTO `gracz`(`ID`, `lvl`, `exp`, `zloto`, `dni_vip`, `drewno`, `drewnoPlus`, `zelazo`, `zelazoPlus`, `kamien`, `kamienPlus`, `wojownicy`, `obroncy`, `mur`) VALUES ('$id','1','0','100','0','0','1','0','1','0','1','0','0','0')");
+    $rezultat = @$polaczenie->query("INSERT INTO `gracz`(`ID`, `lvl`, `exp`, `zloto`, `dni_vip`, `drewno`, `drewnoPlus`, `zelazo`, `zelazoPlus`, `kamien`, `kamienPlus`, `wojownicy`, `obroncy`) VALUES ('$id','1','0','100','0','0','1','0','1','0','1','0','0')");
 
     $polaczenie->close();      
 }

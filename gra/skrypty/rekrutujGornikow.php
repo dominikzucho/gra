@@ -22,12 +22,12 @@ if(200 * $lvl <= $drewno && 100 * $lvl <= $kamien){
     $zapytanie = "UPDATE gracz SET `drewno`=drewno-$drewnominus,`kamien`=kamien-$kamienminus ,`czasdozlota`='$format' WHERE ID = $id";
     $polaczenie->query($zapytanie);
     $polaczenie->close();
-    $_SESSION['komunikat-zloto'];
+    $_SESSION['notification'] = "Zrekrutowałeś górników!";
     header("Location: ../zloto.php");
 }
 else{
     echo "chuj ci w dupe nie masz surowców";
-    $_SESSION['komunikat-zloto'];
+    $_SESSION['notification'] = "brak surowców!!";
     $polaczenie->close();
     header("Location: ../zloto.php");
 }

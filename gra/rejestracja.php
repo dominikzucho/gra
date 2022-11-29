@@ -66,7 +66,7 @@ else{
         //wyciagamy id
         $id = $rezultat->fetch_row()[0];
         
-        $rezultat = @$poloczenie->query("INSERT INTO `gracz`(`ID`, `lvl`, `exp`, `zloto`, `dni_vip`, `drewno`, `drewnoPlus`, `zelazo`, `zelazoPlus`, `kamien`, `kamienPlus`, `wojownicy`, `obroncy`, `mur`, `koszt_ulepszenia`) VALUES ('$id','1','0','100','0','0','1','0','1','0','1','0','0','0','50')");
+        $rezultat = @$poloczenie->query("INSERT INTO `gracz`(`ID`, `lvl`, `exp`, `zloto`, `dni_vip`, `drewno`, `drewnoPlus`, `zelazo`, `zelazoPlus`, `kamien`, `kamienPlus`, `wojownicy`, `obroncy`, `koszt_ulepszenia`) VALUES ('$id','1','0','100','0','0','1','0','1','0','1','0','0','50')");
           
 
         

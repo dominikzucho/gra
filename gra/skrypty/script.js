@@ -100,6 +100,29 @@ if(element[1].classList.item(0) == hide.toString()){
   element[1].classList.replace(element[1].classList.item(0),hide.toString());
 }
 }
+async function notifications(){
+  const response = await fetch("./skrypty/notifications.php",{
+    headers: {
+      'Accept':'application/json',
+      'Content-Type':'application/json'
+    },
+    method: "POST"
+  });
+  var n = await response.json();
+  
+  const notifications = document.querySelector('#notifications');
+
+  if(n.notification!=null){
+    notifications.innerHTML=n.notification;
+    notifications.classList.add("notification");
+    setTimeout(notiClear,2000); 
+  }
+} 
+function notiClear(){
+  document.querySelector('#notifications').classList.remove("notification");
+  document.querySelector('#notifications').innerHTML = "";
+}
+
 
 async function click(){
   clickStats();
@@ -110,6 +133,7 @@ window.onclick = e => {
 function start(){
   nick();
   clickStats();
+  notifications();
 }
 start();
 // document.onload(start()); //gdy strona sie załaduje to wywoła start()

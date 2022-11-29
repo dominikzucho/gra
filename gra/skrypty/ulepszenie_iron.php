@@ -46,7 +46,8 @@ if($polaczenie->connect_errno!=0){}else{
 
     else{
         //za mało pieniążków
-        echo "nope";
+        $_SESSION['notification'] = "nie stać cię!!";
+        header('location: ../gra.php');
     }
 }
 ?>
