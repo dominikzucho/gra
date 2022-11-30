@@ -11,30 +11,7 @@ require_once "polaczenie.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>handel</title>
     <link rel="stylesheet" href="./skrypty/style.css">
-    <style>
-        body{
-            background-color:cadetblue;
-            display: flex;
-            flex-direction: column;
-        }
-        .hi{
-            width: 100%;
-            flex-basis: 1;
-        }
-        .oferty{
-            width: 100%;
-            flex-basis: 50vh;
-            border:2px solid black;
-            background-color:darkgrey;
-        }
-        .stats{
-            display: flex;
-            justify-content: space-between;
-        }
-       .oferta{
-        display: flex;
-       }
-    </style>
+    <link rel="stylesheet" href="./skrypty/handel.css">
 </head>
 <body>
     <div class="hi"><h1>handlujemy?</h1></div>
@@ -49,7 +26,7 @@ require_once "polaczenie.php";
 
     <div class="sprzedaj">
         <form action="./skrypty/sprzedaj.php" method="post">
-        <select name="item">
+        <select name="item" class="button">
             <option value="" selected>co chcesz sprzedać?</option>
             <option value="drewno">drewno</option>
             <option value="kamien">kamien</option>
@@ -59,14 +36,14 @@ require_once "polaczenie.php";
         <input type="number" name="cena" min="0">
         ilość:
         <input type="number" name="ilosc" min="0">
-        <input type="submit" value="Sprzedaj">
+        <input class="button sell" type="submit" value="sprzedaj">
         <?php if(isset($_SESSION['BrakSurowcow'])) echo $_SESSION['BrakSurowcow']; ?>
         <?php if(isset($_SESSION['biedak'])) echo $_SESSION['biedak']; ?>
         <?php if(isset($_SESSION['pech'])) echo $_SESSION['pech']; ?>
         </form>
     </div>
-    
-    <a href="../gra/gra.php">gra</a>
+    <br>
+    <a class="button" href="../gra/gra.php">gra</a>
 
     
     <script src="./skrypty/script.js"></script>

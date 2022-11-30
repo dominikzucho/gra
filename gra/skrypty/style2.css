@@ -37,6 +37,9 @@
         font-family: Arial, sans-serif;
         position: absolute;
         margin: 5px;
+        padding: 0px;
+        padding-left: 8px;
+        padding-right: 8px;
         right: 0;
         top: 0;
         background-color: rgba(237, 59, 65, 0.38);
@@ -79,11 +82,16 @@
     }
     button:hover{
         transition: 0.32s;
-        font-size: 1.25rem;
+        background-color: aliceblue;
+        color: black;
+        border:none;
     }
     .button:hover{
         transition: 0.32s;
-        font-size: 1.25rem;
+        /* font-size: 1.25rem; */
+        background-color: aliceblue;
+        color: black;
+        border:none;
     }
     .button{
         transition: 0.32s;
@@ -118,6 +126,9 @@
     }
     .zlotoo{
         padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
     }
     @keyframes fall {
@@ -125,7 +136,7 @@
         top: -100px;
         }
         100%{
-          top: 50%;  
+          top: 45%;  
         }
     }
     .hidden{
@@ -170,7 +181,8 @@
     }
     #notifications{
         z-index: 100;
-        left: calc(50% - auto);
+        left: 50%;
+        transform: translate(-50%);
         top: 50%;
         position: fixed;
         font-size: 3rem;
@@ -193,6 +205,46 @@
             top: 80%;
         }
     }
-    #atak{
-        overflow: scroll;
+    /* #atak{
+        
+    } */
+    .gracze-show::-webkit-scrollbar{
+        display: none;
+    }
+    .gracze-show{
+        z-index: 2;
+        background-color: black;
+        color: white;
+        overflow-y: scroll;
+    }
+    .buttons{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .buttons > button, a {
+        margin: 10px;
+    }
+    .gracz > div {
+        margin: 5px;
+    }
+    .gracz{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 10px 0;
+        font-size: 2rem;
+    }
+    .zbierz-zloto{
+        position: absolute;
+        margin-top: 500px;
+        z-index: 1;
+    }
+    .zbierz-zloto form{
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        
     }

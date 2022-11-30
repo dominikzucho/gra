@@ -110,19 +110,43 @@
       })
       var x = await response.json();
 
-      const div = document.querySelector('#gracze');
+      const div = document.querySelector('.gracze-show');
       for(var i = 0; i<x.gracz.length;i++){
         const gracz = document.createElement('div');
+        gracz.classList.add("gracz");
 
-        const info1 = document.createElement('p'); 
-        info1.innerHTML = "Nick: ";
+        const info1 = document.createElement('div'); 
+        info1.innerHTML = "nick: ";
         const nick = document.createElement('div');
         nick.innerHTML = x.gracz[i][1];
+        const info2 = document.createElement('div'); 
+        info2.innerHTML = "lvl: ";
+        const lvl = document.createElement('div');
+        lvl.innerHTML = x.gracz[i][2];
+
+        const atak = document.createElement('form');
+          atak.method="post";
+          atak.className = "atak-button";
+          atak.action = "./skrypty/atak-na-gracza.php";
+          const hidden = document.createElement('input');
+            hidden.value = x.gracz[i][0];
+            hidden.name = "gracz";
+            hidden.type = "hidden";
+            atak.appendChild(hidden);
+          const button = document.createElement("input");
+            button.type = "submit";
+            button.value = "Atak";
+            button.className = "button";
+            atak.appendChild(button);
 
 
 
         gracz.appendChild(info1);
         gracz.appendChild(nick);
+        gracz.appendChild(info2);
+        gracz.appendChild(lvl);
+        gracz.appendChild(atak);
+
         div.appendChild(gracz);
 
       }
@@ -154,5 +178,6 @@
   koszt();
   cenaObroncy();
   cenaWojownika();
+  gracze();
   
   

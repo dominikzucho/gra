@@ -20,25 +20,18 @@ async function oferty(){
         oferta.classList.add('oferta');
         div.appendChild(oferta);
 
-        const info1 = document.createElement('p'); 
-        info1.innerHTML = "sprzedawca: ";
+
         const sprzedawca = document.createElement('div');
-        sprzedawca.innerHTML = oferty.oferty[i][1];
+        sprzedawca.innerHTML ="sprzedawca: "+ oferty.oferty[i][1];
 
-        const info2 = document.createElement('p'); 
-        info2.innerHTML = "towar: ";
         const towar = document.createElement('div');
-        towar.innerHTML = oferty.oferty[i][2];
+        towar.innerHTML = "towar: "+oferty.oferty[i][2];
 
-        const info3 = document.createElement('p'); 
-        info3.innerHTML = "ilość: ";
         const ilosc = document.createElement('div');
-        ilosc.innerHTML = oferty.oferty[i][3];
-
-        const info4 = document.createElement('p'); 
-        info4.innerHTML = "cena: ";
+        ilosc.innerHTML = "ilość: "+oferty.oferty[i][3];
+        
         const cena = document.createElement('div');
-        cena.innerHTML = oferty.oferty[i][4];
+        cena.innerHTML = "cena: "+oferty.oferty[i][4];
 
         //zakup
         var hidden = document.createElement("input");
@@ -48,6 +41,7 @@ async function oferty(){
         var button = document.createElement("input");
         button.type = "submit";
         button.value = "Kup";
+        button.className = "button"
         var form = document.createElement("form");
           form.method = "POST";
           form.action = "./skrypty/kup.php"
@@ -59,23 +53,26 @@ async function oferty(){
           anulowanieForm.action = "./skrypty/anulowanie.php"
           var anulowanie = document.createElement("button")
           anulowanie.textContent = "usuń";
+          anulowanie.className = "button";
+
           anulowanieForm.appendChild(anulowanie);
+
           var hidden2 = document.createElement("input");
           hidden2.type = "hidden";
           hidden2.name = "hidden";
           hidden2.value = oferty.oferty[i][0];
           
-          
+          anulowanieForm.appendChild(hidden2);
         
         ///ustawiamy elementy
-        oferta.appendChild(info1)
+        
         oferta.appendChild(sprzedawca)
-        oferta.appendChild(info2)
+        
         oferta.appendChild(towar)
-        oferta.appendChild(info3)
+  
         oferta.appendChild(ilosc)
-        oferta.appendChild(info4)
         oferta.appendChild(cena)
+        
         if(oferty.oferty[i][1] != oferty.nick){
           oferta.appendChild(form);
         }

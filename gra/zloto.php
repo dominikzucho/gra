@@ -26,23 +26,26 @@
         <div class="zbierz-zloto-hidden" id="zbierz-zloto">
             <form action="./skrypty/zbierzZloto.php" method="post">
                 <label for="zbierz">Twoje złoto jest gotowe do zebrania!</label>
-                <input type="submit" value="zbierz" id="zbierz">
+                <input class="button" type="submit" value="zbierz" id="zbierz">
             </form>
         </div>
-        <button onclick="show_or_hide('gornicy','okno-show','okno-hide')" id="gornicy">Wyślij górników</button>
-        <div class="okno-hide zbiory-zlota" id="gornicy">
-            <div class="gornik-img" style="width: 300px; height:450px"><img src="./img/gornik.png" alt=""></div>
-            <div class="koszt-zbioru">drewno2 kamien1</div>
-            <div class="zbierz">
-                <form action="./skrypty/rekrutujGornikow.php" method="post">
-                    <input type="submit" value="zlecenie" class="button">
-                </form>
-            </div>
-            <button onclick="show_or_hide('gornicy','okno-show','okno-hide')" class="x" id="gornicy">x</button>
-        </div>
+        
         <img src="./img/zloto.png" class="fall" id="zloto">
+        
+        
+        
+        <div class="buttons">
+            <button onclick="show_or_hide('gornicy','okno-show','okno-hide')" id="gornicy">wydobądz złoto</button>
+            <button onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">zatrudnij wojsko</button>
+            <button id="atak" onclick="show_or_hide('atak','okno-show','okno-hide')">zaatakuj gracza</button>
+            <a style="text-decoration:none;" class="button" href="./gra.php">wróć do wioski</a>
+        </div>
+
+
+        <div class="okno-hide gracze-show" id="atak">
+            <button id="atak" class="x" onclick="show_or_hide('atak','okno-show','okno-hide')">x</button>
+        </div>
         <div class="kup-jednostke">
-            <button onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">Rekrutuj</button>
             <div class="rekrutuj-hide" id="jednostka">
             <div class="obroncy">
                 <img src="obronca.png" alt="obronca">
@@ -63,15 +66,15 @@
             <button class="x" onclick="show_or_hide('jednostka','rekrutuj-show','rekrutuj-hide')" id="jednostka">x</button>
             </div>
         </div>
-        <button id="atak" onclick="show_or_hide('atak','okno-show','okno-hide')">atak</button>
-        <div class="okno-hide" id="gracze">
-
-
-        <button id="atak" class="x" onclick="show_or_hide('atak','okno-show','okno-hide')">x</button>
-        </div>
-        
-
-        <div><a class="button" href="./gra.php">wioska</a></div>
+        <div class="okno-hide zbiory-zlota" id="gornicy">
+            <div class="gornik-img" style="width: 300px; height:450px"><img src="./img/gornik.png" alt=""></div>
+            <div class="koszt-zbioru">drewno2 kamien1</div>
+            <div class="zbierz">
+                <form action="./skrypty/rekrutujGornikow.php" method="post">
+                    <input type="submit" value="zlecenie" class="button">
+                </form>
+            </div>
+            <button onclick="show_or_hide('gornicy','okno-show','okno-hide')" class="x" id="gornicy">x</button>
         </div>
         
     </div>

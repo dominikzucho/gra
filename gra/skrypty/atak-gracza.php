@@ -8,7 +8,7 @@ $input = json_decode($input);
 
 $polaczenie = @new mysqli($host, $user, $password, $name);
 if($polaczenie->connect_errno!=0){}else{
-   $zapytanie = "SELECT * FROM `gracz`";
+   $zapytanie = "SELECT * FROM `gracz` WHERE ID != $id AND nick != ''";
    $wynik = $polaczenie->query($zapytanie);
    $wynik = $wynik->fetch_all(); 
    echo json_encode(["gracz" => $wynik]);

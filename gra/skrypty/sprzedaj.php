@@ -4,6 +4,7 @@
     $sprzedaz = $_POST['item'];
     if($sprzedaz=="")header("Location: ../handel.php");
     $ilosc = $_POST['ilosc'];
+    if($ilosc=="")header("Location: ../handel.php");
     $cena = $_POST['cena'];
     $id = $_SESSION['id'];
     $nick = $_SESSION['login'];

@@ -10,6 +10,9 @@
     $rezultat->free_result();
     $rezultat = @$polaczenie->query("SELECT * FROM `gracz` WHERE ID = '$id'");
     $_SESSION['nick'] = $rezultat->fetch_row()[1];
+    $rezultat = @$polaczenie->query("SELECT * FROM `gracz` WHERE ID = '$id'");
+    $_SESSION['koszt-ulepszenia'] = $rezultat->fetch_assoc()['koszt_ulepszenia'];
+
     $rezultat->free_result();
     $polaczenie->close();
 ?>
@@ -71,6 +74,7 @@
 
 <div class="ulepszenia">
     <h4>Koszt ulepszenia:</h4>
+    <?php echo $_SESSION['koszt-ulepszenia']; ?>
 <form action="skrypty/ulepszenie_wood.php" method="POST">
     <input class="przycisk2" type="submit" name="update_wood" value="drzewo">
 </form>
@@ -122,7 +126,7 @@
 
 </div>
 
-<script src="./skrypty/script.js"></script>
+
 </div>
             <button class="x" onclick="show_or_hide('okno1','okno1-show','okno1-hide')" id="okno1">x</button>
         </div>
@@ -155,7 +159,7 @@
 
 </div>
 
-<script src="./skrypty/script.js"></script>
+
             </div>
             <button class="x" onclick="show_or_hide('okno2','okno2-show','okno2-hide')" id="okno2">x</button>
         </div>
@@ -199,7 +203,7 @@
 </div>
 
 
-<script src="./skrypty/script.js"></script>
+
             </div>
             <button class="x" onclick="show_or_hide('okno3','okno3-show','okno3-hide')" id="okno3">x</button>
         </div>
